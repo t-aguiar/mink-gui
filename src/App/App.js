@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Home from '../Home';
-import Jobs from '../Jobs';
-import JobBoard from '../JobBoard';
+import Estores from '../pages/Estores';
+import Home from '../pages/Home';
+import Jobs from '../pages/Jobs';
+import JobBoard from '../pages/JobBoard';
 import 'bulma/css/bulma.css';
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
               <div id="navbar" className="navbar-menu">
                 <div className="navbar-start">
                   <Link to={'/'} className="navbar-item">Home</Link>
+                  <Link to={'/estores'} className="navbar-item">Estores</Link>
                   <Link to={'/jobs'} className="navbar-item">Jobs</Link>
                   <Link to={'/job-board'} className="navbar-item">Job Board</Link>
                 </div>
@@ -33,6 +35,7 @@ class App extends Component {
             </nav>
             <Switch>
               <Route exact path='/' component={Home}/>
+              <Route path='/estores' component={Estores}/>
               <Route path='/jobs' component={Jobs}/>
               <Route path='/job-board' component={JobBoard}/>
             </Switch>
